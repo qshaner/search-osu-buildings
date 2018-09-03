@@ -1,40 +1,40 @@
 import React, {Component} from 'react'
 import './App.css'
 import axios from 'axios'
+import jsonData from './components/buildings';
+import {SearchBar} from 'react-native-elements'
 
 class App extends Component {
 constructor() {
   super()
   this.state = {
-    buildings: [{
-      name: '',
-      address: '',
-      imageUrl: '',
-      categories: [],
-      departments: []
-        }]
+    buildings: {test: jsonData.data.buildings},
+    searchText: ''
   }
-  this.handleClick = this.handleClick.bind(this);
 }
 
-handleClick() {
+componentDidMount() {
   console.log('Success!');
-  axios.get('https://content.osu.edu/v2/buildings')
-  .then(response => response.data.data.buildings.map(result => ({
-    name: `${result.name}`,
-    address: `${result.address}`,
-    categories: `${result.categories}`,
-    departments: `${result.departments}`,
-    image: `${result.imageUrl}`
-  }))).then(newData => console.log(newData))
+  this.setState({buildings: jsonData});
+
+  //console.log('buildings: ', this.state.buildings);
+  console.log('specific name: ', this.state.buildings.test[0].address);
 }
+
+
 
   render() {
+   //const buildings = this.state.buildings;
+   //let buildingsList = '';
     return(
       <div className="button_container">
-      <button className='button' onClick={this.handleClick}
+      <button className='button' 
       >Click Me</button>
-      <p>{this.state.buildingName}</p>
+      <p></p>
+      <SearchBar
+      onChangeText= {text => this.setState({searchText: text})}
+      placeholder="Search..."
+      ></SearchBar>
       </div>
     )
   }
