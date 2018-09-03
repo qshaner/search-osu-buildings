@@ -1,0 +1,23 @@
+{
+  "name": "search-osu-buildings",
+  "version": "1.0.0",
+  "description": "Making a searchable buildings webside",
+  "main": "index.js",
+  "dependencies": {
+    "react": "^16.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qshaner/search-osu-buildings.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qshaner/search-osu-buildings/issues"
+  },
+  "homepage": "https://github.com/qshaner/search-osu-buildings#readme"
+}
