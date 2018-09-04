@@ -23,8 +23,9 @@
 }
 
 .button_container {
-  margin-top: 200px;
+  margin-top: 20px;
   text-align: center;
+  flex-direction: row;
 }
 .button {
   background-color:green;

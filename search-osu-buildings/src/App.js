@@ -2,13 +2,12 @@ import React, {Component} from 'react'
 import './App.css'
 import axios from 'axios'
 import jsonData from './components/buildings';
-import {SearchBar} from 'react-native-elements'
 
 class App extends Component {
 constructor() {
   super()
   this.state = {
-    buildings: {test: jsonData.data.buildings},
+    buildings: jsonData.data,
     searchText: ''
   }
 }
@@ -18,23 +17,31 @@ componentDidMount() {
   this.setState({buildings: jsonData});
 
   //console.log('buildings: ', this.state.buildings);
-  console.log('specific name: ', this.state.buildings.test[0].address);
+}
+
+getResults() {
+//let search = this.state.searchText;
+console.log('specific name: ', this.state.buildings.name['']);
+
+//this.state.buildings.test.name["search"];
 }
 
 
-
   render() {
-   //const buildings = this.state.buildings;
-   //let buildingsList = '';
     return(
+      <div>
       <div className="button_container">
-      <button className='button' 
-      >Click Me</button>
-      <p></p>
-      <SearchBar
-      onChangeText= {text => this.setState({searchText: text})}
-      placeholder="Search..."
-      ></SearchBar>
+     <form>
+       <input type="text" placeholder="Search..." name="search"
+       onChange={text => this.setState({searchText: text})}/>
+       <button type="submit"className onSubmit={this.getResults()}>GO</button>
+     </form>
+     {/* <p>How are you searching?</p>
+     <form>
+     <input type="radio" name="searchParams" value="Name"/> Name
+       <input type="radio" name="searchParams" value="Address"/> Address
+     </form> */}
+     </div>
       </div>
     )
   }
