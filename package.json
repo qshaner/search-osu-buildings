@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "material-ui-search-bar": "^0.4.2",
+    "prop-types": "^15.6.2",
     "react-native": "^0.56.0",
     "react-native-elements": "^0.19.1"
   }
